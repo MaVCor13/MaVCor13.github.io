@@ -1,0 +1,90 @@
+/* Estilos generales */
+
+/* Fuente y línea de texto para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Estilos para el título del encabezado */
+header h1 {
+    margin: 0;
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para cada ítem de la lista de navegación */
+nav li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+/* Estilos para los enlaces de la lista de navegación */
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 2rem;
+}
+
+/* Estilos para cada sección */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Estilos para la lista de intereses */
+ul {
+    list-style: disc;
+    padding-left: 2rem;
+}
+
+/* Estilos para los enlaces */
+a {
+    color: #007bff;
+}
+
+/* Estilos al pasar el ratón sobre los enlaces */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para el artículo de información personal */
+article:nth-child(1) img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+/* Estilos específicos para el artículo de experiencias */
+article:nth-child(3) video {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
