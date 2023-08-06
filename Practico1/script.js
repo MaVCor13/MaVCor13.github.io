@@ -1,47 +1,55 @@
-document.getElementById("calculate").addEventListener("click", function () {
-    var operand1 = parseFloat(document.getElementById("operand1").value);
-    var operand2 = parseFloat(document.getElementById("operand2").value);
-    var operator = document.getElementById("operator").value;
-    var result = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    var operand1Input = document.getElementById("operand1");
+    var operand2Input = document.getElementById("operand2");
+    var operatorSelect = document.getElementById("operator");
+    var resultOutput = document.getElementById("result");
 
-    // Validar si los operandos son números válidos y no están vacíos
-    if (isNaN(operand1) || isNaN(operand2)) {
-        document.getElementById("result").textContent = "Error: Ingresa números válidos en ambos campos";
-        return;
-    }
+    document.getElementById("calculate").addEventListener("click", function () {
+        var operand1 = parseFloat(operand1Input.value);
+        var operand2 = parseFloat(operand2Input.value);
+        var operator = operatorSelect.value;
+        var result = 0;
 
-    // Realizar operaciones según el operador seleccionado
-    switch (operator) {
-        case "sum":
-            result = operand1 + operand2;
-            break;
-        case "subtract":
-            result = operand1 - operand2;
-            break;
-        case "multiply":
-            result = operand1 * operand2;
-            break;
-        case "divide":
-            if (operand2 !== 0) {
-                result = operand1 / operand2;
-            } else {
-                document.getElementById("result").textContent = "Error: No se puede dividir por cero";
-                return;
-            }
-            break;
-    }
+        // Validar si los operandos son números válidos y no están vacíos
+        if (isNaN(operand1) || isNaN(operand2)) {
+            resultOutput.textContent = "Error: Ingresa números válidos en ambos campos";
+            return;
+        }
 
-    // Manejar resultados demasiado grandes o pequeños
-    if (!isFinite(result)) {
-        document.getElementById("result").textContent = "Error: Resultado fuera de rango";
-        return;
-    }
+        // Realizar operaciones según el operador seleccionado
+        switch (operator) {
+            case "sum":
+                result = operand1 + operand2;
+                break;
+            case "subtract":
+                result = operand1 - operand2;
+                break;
+            case "multiply":
+                result = operand1 * operand2;
+                break;
+            case "divide":
+                if (operand2 !== 0) {
+                    result = operand1 / operand2;
+                } else {
+                    resultOutput.textContent = "Error: No se puede dividir por cero";
+                    return;
+                }
+                break;
+        }
 
-    document.getElementById("result").textContent = "Resultado: " + result;
+        // Manejar resultados demasiado grandes o pequeños
+        if (!isFinite(result)) {
+            resultOutput.textContent = "Error: Resultado fuera de rango";
+            return;
+        }
+
+        resultOutput.textContent = "Resultado: " + result;
+    });
+
+    document.getElementById("clear").addEventListener("click", function () {
+        operand1Input.value = "";
+        operand2Input.value = "";
+        resultOutput.textContent = "Resultado: ";
+    });
 });
 
-document.getElementById("clear").addEventListener("click", function () {
-    document.getElementById("operand1").value = "";
-    document.getElementById("operand2").value = "";
-    document.getElementById("result").textContent = "Resultado: ";
-});
