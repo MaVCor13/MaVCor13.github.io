@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator">
         <h1>Calculadora</h1>
         <div class="input-group">
-            <input type="number" id="operand1" placeholder="Operador 1">
+            <input type="number" step="any" id="operand1" placeholder="Operador 1">
             <select id="operator">
                 <option value="sum">+</option>
                 <option value="subtract">-</option>
                 <option value="multiply">*</option>
                 <option value="divide">/</option>
             </select>
-            <input type="number" id="operand2" placeholder="Operador 2">
+            <input type="number" step="any" id="operand2" placeholder="Operador 2">
         </div>
-        <button id="calculate">Calcular</button>
+        <div class="buttons">
+            <button id="calculate">Calcular</button>
+            <button id="clear">Borrar</button>
+        </div>
         <p id="result">Resultado: </p>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
 
