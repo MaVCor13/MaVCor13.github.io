@@ -3,25 +3,7 @@ document.getElementById("calculate").addEventListener("click", function () {
     var operand2 = parseFloat(document.getElementById("operand2").value);
     var operator = document.getElementById("operator").value;
     var result = 0;
-
-    switch (operator) {
-        case "sum":
-            result = operand1 + operand2;
-            break;
-        case "subtract":
-            result = operand1 - operand2;
-            break;
-        case "multiply":
-            result = operand1 * operand2;
-            break;
-        case "divide":
-            result = operand1 / operand2;
-            break;
-    }
-
-    document.getElementById("result").textContent = "Resultado: " + result;
-});
-// Función para validar un número
+    // Función para validar un número
 function esNumeroValido(numero) {
     return !isNaN(numero) && numero !== '';
 }
@@ -60,3 +42,22 @@ document.getElementById("calculate").addEventListener("click", function () {
 
     document.getElementById("result").textContent = "Resultado: " + result;
 });
+
+    switch (operator) {
+        case "sum":
+            result = operand1 + operand2;
+            break;
+        case "subtract":
+            result = operand1 - operand2;
+            break;
+        case "multiply":
+            result = operand1 * operand2;
+            break;
+        case "divide":
+            result = operand1 / operand2;
+            break;
+    }
+
+    document.getElementById("result").textContent = "Resultado: " + result;
+});
+
